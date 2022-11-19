@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
+import mockup from './mockup.png';
 
 function App() {
   const items = ["you're home", "you're back", "you arrive", "you're safe"];
@@ -21,10 +22,11 @@ function App() {
 
   return (
     <div className="landing-page">
-      <p className="header-title">Text Me When</p>
-      <p className="header-subtitle">Let your loved ones know you're safe</p>
+
       <header className="header">
-        <p>Be the first to know when we launch!</p>
+        <p className="header-title">Text Me When</p>
+        <p className="header-subtitle">Let your loved ones know you're safe</p>
+        <p className="launch-message">Be the first to know when we launch!</p>
         <form class="custom-search">
           <input
             type="text"
@@ -36,6 +38,7 @@ function App() {
           </button>
         </form>
       </header>
+      <img className="mockup" src={mockup}/>
     </div>
   );
 }

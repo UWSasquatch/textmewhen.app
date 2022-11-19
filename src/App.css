@@ -1,64 +1,90 @@
 .landing-page {
   font-family: 'DM Sans';
   font-style: normal;
-  color: #373636;
+  color: #252424;
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 50px;
+  display: flex;
+  gap: 50px;
+
+  /* border: 2px solid red; */
+  
 }
 
 .header {
-  /* max-width: 800px; */
-  /* border: 2px solid red; */
-  /* padding: 30px; */
+  padding: 30px;
+  /* border: 2px solid green; */
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header-title {
-  /* position: absolute;
-  width: 907px;
-  height: 177px; */
-
   font-weight: 700;
-  font-size: 128px;
-  margin: 0 auto;
-
-  /* line-height: 167px; */
-
+  font-size: 70px;
+  margin: 0;
 }
 
 .header-subtitle {
-  /* position: absolute;
-  width: 837px;
-  height: 59px; */
+  margin: 0;
+  color: #3d3c3c;
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 5px;
 
+}
+
+.launch-message {
+  margin-top: 50px;
+  margin-left: 5px;
+  margin-bottom: 10px;
   font-weight: 500;
-  font-size: 40px;
-  margin: 0 auto;
-
-  /* line-height: 52px; */
 }
 
 .custom-search {
-  position: relative;
   width: 300px;
+  background: #D6B4E9;
+  border-radius: 20px;
+  display: flex;
 }
+
+
 .custom-search-input {
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 100px;
-  padding: 10px 100px 10px 20px; 
-  line-height: 1;
-  box-sizing: border-box;
-  outline: none;
-}
-.custom-search-button {
-  position: absolute;
-  right: 3px; 
-  top: 3px;
-  bottom: 3px;
+  color: white;
+  flex-grow: 1;
   border: 0;
-  background: #d1095e;
-  color: #fff;
+  outline: none;
+  background: none;
+  margin-left: 15px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+}
+
+.custom-search-input::placeholder { 
+  color: white;
+}
+
+.custom-search-button {
+  color: white;
+  font-family: 'DM Sans';
+  font-style: normal;
+  border: 0;
+  background: #B88BD0;
   outline: none;
   margin: 0;
-  padding: 0 10px;
-  border-radius: 100px;
-  z-index: 2;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.custom-search-button:hover {
+  background: black;
+}
+
+.mockup {
+  padding-top: 20px;
+  width: 320px;
 }
