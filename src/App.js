@@ -10,7 +10,6 @@ function App() {
 
   const onEmailChange = (event) => {
     setFormEmail(event.target.value)
-    console.log(event.target.value)
   }
 
   const isValidEmail = (email) => {
