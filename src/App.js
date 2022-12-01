@@ -49,26 +49,37 @@ function App() {
   return (
     <div className="landing-page">
 
-      <header className="header">
-        <p className="header-title">Text Me When</p>
-        <p className="header-subtitle">Let your loved ones know you're safe</p>
-        <p className="launch-message">
-          {message}
-        </p>
-        <div className="custom-search">
-          <input
-            type="text"
-            className="custom-search-input"
-            placeholder="Enter your email"
-            onChange={onEmailChange}
-            value={formEmail}
-          />
-          <button className="custom-search-button" onClick={onSubmitEmail}>
-            Sign Up
-          </button>
+      <div className="content-area">
+        <div className="left-area">
+          <header className="header">
+            <h1 className="header-title">Text Me When</h1>
+            <p className="header-subtitle">Let your loved ones know you're safe</p>
+            <p className="launch-message">
+              {message}
+            </p>
+            <div className="custom-search">
+              <input
+                type="text"
+                className="custom-search-input"
+                placeholder="Enter your email"
+                onChange={onEmailChange}
+                value={formEmail}
+              />
+              <button className="custom-search-button" onClick={onSubmitEmail}>
+                Sign Up
+              </button>
+            </div>
+          </header>
         </div>
-      </header>
-      <img className="mockup" src={mockup} alt="textmewhen mockup"/>
+        <div className="right-area">
+          <img className="mockup" src={mockup} alt="textmewhen mockup"/>
+        </div>
+      </div>
+
+
+
+
+
     </div>
   );
 }

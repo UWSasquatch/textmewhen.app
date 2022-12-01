@@ -1,3 +1,7 @@
+#root {
+  position: relative;
+}
+
 .landing-page {
   font-family: 'DM Sans';
   font-style: normal;
@@ -5,16 +9,35 @@
   margin: 0 auto;
   max-width: 1000px;
   margin-top: 50px;
-  display: flex;
-  gap: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
 
-  /* border: 2px solid red; */
-  
+.content-area {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-area {
+  flex: 3 3 0;
+  display: flex;
+  align-items: center;
+}
+
+.right-area {
+  flex: 2 2 0;
+  overflow: hidden;
+  min-width: 64px;
 }
 
 .header {
   padding: 30px;
-  /* border: 2px solid green; */
   margin-bottom: 60px;
   display: flex;
   flex-direction: column;
@@ -44,6 +67,7 @@
 }
 
 .custom-search {
+  min-width: 100px;
   width: 300px;
   background: #D6B4E9;
   border-radius: 20px;
@@ -87,4 +111,10 @@
 .mockup {
   padding-top: 20px;
   width: 320px;
+}
+
+@media (max-width: 480px) {
+  .left-area {
+
+  }
 }
