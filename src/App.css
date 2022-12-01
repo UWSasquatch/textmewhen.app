@@ -50,7 +50,6 @@
   display: flex;
 }
 
-
 .custom-search-input {
   color: white;
   flex-grow: 1;
@@ -81,7 +80,8 @@
 }
 
 .custom-search-button:hover {
-  background: black;
+  transition: 0.4s;
+  background: #8d57aa;
 }
 
 .mockup {

@@ -1,24 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 import mockup from './mockup.png';
 
 function App() {
-  const items = ["you're home", "you're back", "you arrive", "you're safe"];
-  const [itemIndex, setItemIndex] = useState(0);
 
-  // const [time, setTime] = useState(Date.now());
+  const [formEmail, setFormEmail] = useState("");
+  const [message, setMessage] = useState("Be the first to know when we launch!")
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setItemIndex((itemIndex + 1) % items.length);
-      console.log(itemIndex);
-    }, 2000);
+  const onEmailChange = (event) => {
+    setFormEmail(event.target.value)
+    console.log(event.target.value)
+  }
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [itemIndex]);
+  const isValidEmail = (email) => {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email)
+  }
+
+  const sendSignupRequest = () => {
+
+    console.log("Sending Form:", formEmail)
+
+    fetch('https://text-me-when-api.herokuapp.com/signup/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: formEmail,
+      })
+    })
+
+  }
+
+  const onSubmitEmail = () => {
+
+    if (isValidEmail(formEmail)) {
+      sendSignupRequest()
+      setMessage("Thank you for signing up!")
+    } else {
+      setMessage("Please enter a valid email :)")
+    }
+    setFormEmail("")
+
+  }
 
   return (
     <div className="landing-page">
@@ -26,19 +53,23 @@ function App() {
       <header className="header">
         <p className="header-title">Text Me When</p>
         <p className="header-subtitle">Let your loved ones know you're safe</p>
-        <p className="launch-message">Be the first to know when we launch!</p>
-        <form class="custom-search">
+        <p className="launch-message">
+          {message}
+        </p>
+        <div className="custom-search">
           <input
             type="text"
-            class="custom-search-input"
+            className="custom-search-input"
             placeholder="Enter your email"
+            onChange={onEmailChange}
+            value={formEmail}
           />
-          <button class="custom-search-button" type="submit">
+          <button className="custom-search-button" onClick={onSubmitEmail}>
             Sign Up
           </button>
-        </form>
+        </div>
       </header>
-      <img className="mockup" src={mockup}/>
+      <img className="mockup" src={mockup} alt="textmewhen mockup"/>
     </div>
   );
 }
